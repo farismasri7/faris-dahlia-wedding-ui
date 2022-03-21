@@ -1,0 +1,57 @@
+.cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  
+.owl-slide {
+  position: relative;
+  height: 100vh;
+  background-color: lightgray;
+  -webkit-transform: translate3d(0,0,1px); 
+  -webkit-backface-visibility: hidden;
+}
+
+#scrollspyHeading1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#scrollspyHeading1 h2 {
+  /* white-space: nowrap; */
+  color: whitesmoke;
+  font-family: "Parisienne", serif;
+  font-size: 300%;
+  font-weight: bold;
+}
+
+#scrollspyHeading1 h1 {
+  /* white-space: nowrap; */
+  color: whitesmoke;
+  font-family: "Parisienne", serif;
+  font-size: 600%;
+  font-weight: bold;
+}
+
+
+#scrollspyHeading1 span {
+  font-size: 100px; 
+  color: whitesmoke;
+  position: absolute;
+  bottom: 25%;
+}
+
+#scrollspyHeading1 span:hover {
+  font-size: 110px; 
+  color: whitesmoke;
+  position: absolute;
+  bottom: 25%;
+}
+
+#scrollspyHeading1 a {
+  display: flex;
+  justify-content: center;
+}
+

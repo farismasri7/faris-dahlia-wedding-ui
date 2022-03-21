@@ -1,0 +1,45 @@
+.cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+    
+.owl-slide {
+    position: relative;
+    height: 100vh;
+    background-color: lightgray;
+    -webkit-transform: translate3d(0,0,1px); 
+    -webkit-backface-visibility: hidden;
+}
+
+form {
+    margin: auto;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right, rgba(6, 18, 75, 0.75), white);
+    width: 70%;
+    /* position: absolute;
+    top: 60%;
+    right: 10%;
+    left: 10% */
+}
+button {
+    display: block;
+    margin: 0 auto;
+    width: 100%
+}
+label{
+    color: white;
+}
+/* 
+.imgContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 600px) {
+    .imgContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+  } */
