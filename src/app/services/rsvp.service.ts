@@ -15,7 +15,7 @@ export class RsvpService {
 
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application.json');
-    return this.http.post('http://localhost:3000/guests', guest, {headers: headers})
+    return this.http.post('/api/guests', guest, {headers: headers})
       .pipe(map((res) => JSON.parse(JSON.stringify(res))));
   }
 }
