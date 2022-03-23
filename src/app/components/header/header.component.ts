@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
-  constructor() {
+  admin!: Object;
+
+  constructor(
+    public authService: AuthService
+  ) {
     window.addEventListener('scroll', (event) =>{
       let navBar:any = document.getElementById('headerNav');
       let navLinks:any = document.querySelectorAll('a');
       if(window.pageYOffset > 0){
-        // console.log(window.pageYOffset)
         navBar.className = "fixed-top navbar-scroll scrolled";
       } else {
         navBar.className = "fixed-top navbar-scroll";
@@ -21,6 +24,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.authService.getAdmin().subscribe(profile => {
+      this.admin = profile.user;
+    })
   }
   
   navCollapse() {
@@ -31,19 +37,5 @@ export class HeaderComponent implements OnInit {
       x.className = "topnav";
     }
   }
-
-  
-
-  // scrollColorShift(){
-  //   let navBar:any = document.getElementById('headerNav');
-  //   navBar.addEventListener('scroll', () => {
-  //     if(navBar.scrollTop() > navBar.height()){
-  //       navBar.className += " scrolled";
-  //     } else {
-  //       navBar.className;
-  //     }
-  //     // navBar.toggleClass('scrolled', navBar.scrollTop() > navBar.height())
-  //   })
-  // }
 
 }

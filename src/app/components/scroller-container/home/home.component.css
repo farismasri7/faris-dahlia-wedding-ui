@@ -12,14 +12,14 @@
   -webkit-backface-visibility: hidden;
 }
 
-#scrollspyHeading1 {
+#section1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
   position: relative;
 }
 
-#scrollspyHeading1 h2 {
+#section1 h2 {
   /* white-space: nowrap; */
   color: whitesmoke;
   font-family: "Parisienne", serif;
@@ -27,7 +27,7 @@
   font-weight: bold;
 }
 
-#scrollspyHeading1 h1 {
+#section1 h1 {
   /* white-space: nowrap; */
   color: whitesmoke;
   font-family: "Parisienne", serif;
@@ -35,22 +35,21 @@
   font-weight: bold;
 }
 
-
-#scrollspyHeading1 span {
+#section1 span {
   font-size: 100px; 
   color: whitesmoke;
   position: absolute;
   bottom: 25%;
 }
 
-#scrollspyHeading1 span:hover {
+#section1 span:hover {
   font-size: 110px; 
   color: whitesmoke;
   position: absolute;
   bottom: 25%;
 }
 
-#scrollspyHeading1 a {
+#section1 a {
   display: flex;
   justify-content: center;
 }

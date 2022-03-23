@@ -1,44 +1,16 @@
-<div id="scrollspyHeading3" class="owl-slide d-flex align-items-center cover"
-    style="background-image: url(../../assets/Dahlia+FarisEngagementParty_0256.jpg);">
-    <form (submit)="onRSVPSubmit()">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="FirstName">First Name</label>
-                <input type="FirstName" [(ngModel)]="FirstName" class="form-control" name="FirstName" id="inputFirstName" placeholder="First Name" ng-required="true">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="LastName">Last Name</label>
-                <input type="LastName" [(ngModel)]="LastName" class="form-control" name="LastName" id="inputLastName" placeholder="Last Name" ng-required="true">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="Email">Email Address</label>
-            <input type="Email" [(ngModel)]="Email" class="form-control" name="Email" id="inputEmail" placeholder="you@Email.com" ng-required="true">
-        </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input [(ngModel)]="isAttending" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Attending">
-                        <label for="isAttending" class="form-check-label" for="gridRadios1">
-                            Attending
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input [(ngModel)]="isAttending" class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Not Attending">
-                        <label for="isAttending" class="form-check-label" for="gridRadios2">
-                            NOT Attending
-                        </label>
-                    </div>
-                    <div class="form-check disabled">
-                        <input [(ngModel)]="isAttending" class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="Maybe">
-                        <label for="isAttending" class="form-check-label" for="gridRadios3">
-                            Maybe
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div id="section3" class="owl-slide d-flex align-items-center cover bio">
+    <h2 class="date">July 23rd, 2022</h2>
+    <h3 class="address1">Katameya Heights Golf & Tennis Resort</h3>
+    <h4 class="address2">New Cairo City (Fifth District), Ring Road, Cairo, Egypt</h4>
+    <div id="countdown">
+        <ul>
+            <li class="clockContainer"><span class="clock" id="days"></span>Days</li>
+            <li class="clockContainer"><span class="clock" id="hours"></span>Hours</li>
+            <li class="clockContainer"><span class="clock" id="minutes"></span>Minutes</li>
+            <li class="clockContainer"><span class="clock" id="seconds"></span>Seconds</li>
+        </ul>
+    </div>
+    <div class="imgContainer">
+        <img src="../../assets/navy-bouquet.jpg" alt="" id="flowerNavy">
+    </div>
 </div>

@@ -1,17 +1,8 @@
-/* header {
-    margin-left: 0px;;
-}
-
-.navbar-toggler {
-    color: black;
-}
-*/
-
 h1 {
     float:left
 }
 
-nav{
+#headerNav {
     border-bottom: thin solid rgba(255, 255, 255, 0.25);
 }
 
@@ -50,8 +41,12 @@ body {
 }
 
 .scrolled {
-    background-color: rgba(6, 18, 75, 0.5) !important;
+    background-color: rgba(249, 249, 250, 1) !important;
     transition: background-color 200ms linear;
+}
+
+.scrolled .navbar-brand, .scrolled i, .scrolled a{
+    color: rgba(6, 18, 75, 1) !important;;
 }
 
 .scrolled .link, .scrolled .navbar-brand {

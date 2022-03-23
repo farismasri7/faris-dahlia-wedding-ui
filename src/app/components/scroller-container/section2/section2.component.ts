@@ -1,54 +1,75 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RsvpService } from 'src/app/services/rsvp/rsvp.service';
+// import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-section2',
   templateUrl: './section2.component.html',
-  styleUrls: ['./section2.component.css']
+  styleUrls: ['./section2.component.css'],
 })
-export class section2Component implements OnInit {
+export class Section2Component implements OnInit {
+  FirstName!: String;
+  LastName!: String;
+  Email!: String;
+  isAttending!: String;
+  Qty!: Number;
 
-  constructor() { }
+  constructor(private rsvpService: RsvpService) {}
 
-  ngOnInit(): void {
-    // Update the count down every 1 second
-    let daysElem = <HTMLInputElement>document.getElementById('days');
-    let hoursElem = <HTMLInputElement>document.getElementById('hours');
-    let minsElem = <HTMLInputElement>document.getElementById('minutes');
-    let secsElem = <HTMLInputElement>document.getElementById('seconds');
+  ngOnInit(): void {}
 
-    const countDownDate = new Date("Jul 23, 2022 16:00:00").getTime();
+  onRSVPSubmit(event: any) {
+    const guest = {
+      FirstName: this.FirstName,
+      LastName: this.LastName,
+      Email: this.Email,
+      isAttending: this.isAttending,
+      Qty: this.Qty,
+    };
 
-    let x = setInterval(function () {
-      // Get today's date and time
-      let now = new Date().getTime();
+    if(!this.rsvpService.validateRSVP(guest)) {
+      this.errorBanner();
+      return;
+    }
 
-      // Find the distance between now and the count down date
-      let distance = countDownDate - now;
+    if(!this.rsvpService.validateEmailRegex(guest.Email)){
+      this.emailErrorBanner();
+      return;
+    }
 
-      // Time calculations for days, hours, minutes and seconds
-      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      
-      // Output the result in an element with id="demo"
-      daysElem.innerHTML = days.toString();
-      hoursElem.innerHTML = hours.toString();
-      minsElem.innerHTML = minutes.toString();
-      secsElem.innerHTML = seconds.toString();
-
-      // If the count down is over, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        daysElem.value = "00"
-        hoursElem.value = "00"
-        minsElem.value = "00"
-        secsElem.value = "00"
-      }
-    }, 1000);
-    
+    this.rsvpService.registerGuestRsvp(guest).subscribe((data) => {
+      console.log("success");
+      this.successBanner();
+      event.preventDefault();
+      let inputs: any = document.querySelectorAll('input, select');
+      inputs.forEach((input: any) => {
+        input.value = '';
+      });
+    });
   }
 
+  successBanner() {
+    let x: any = document.getElementById('success-banner');
+    x.className = 'alert alert-success';
+    setTimeout(() => {
+      x.className = 'hidden alert alert-success';
+    }, 3000);
+  }
+
+  errorBanner() {
+    let y: any = document.getElementById('error-banner');
+    y.className = 'alert alert-danger';
+    setTimeout(() => {
+      y.className = 'hidden alert alert-danger';
+    }, 3000);
+  }
+
+  emailErrorBanner() {
+    let y: any = document.getElementById('regex-error-banner');
+    y.className = 'alert alert-danger';
+    setTimeout(() => {
+      y.className = 'hidden alert alert-danger';
+    }, 3000);
+  }
 }
