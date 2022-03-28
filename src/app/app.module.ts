@@ -13,10 +13,11 @@ import { Section3Component } from './components/scroller-container/section3/sect
 import { Section4Component } from './components/scroller-container/section4/section4.component';
 import { Section5Component } from './components/scroller-container/section5/section5.component';
 import { Section6Component } from './components/section6/section6.component';
-import { Section7Component } from './components/scroller-container/section7/section7.component';
+import { Section7Component } from './components/section7/section7.component';
 import { AuthService } from './services/auth/auth.service';
 import { GuestsService } from './services/guests/guests.service';
 import { RsvpService } from './services/rsvp/rsvp.service';
+import { Section8Component } from './components/scroller-container/section8/section8.component';
 
 
 const appRoutes: Routes = [
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     Section4Component,
     Section5Component,
     Section6Component,
-    Section7Component
+    Section7Component,
+    Section8Component
   ],
   imports: [
     BrowserModule,

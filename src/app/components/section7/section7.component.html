@@ -1,14 +1,20 @@
-<div id="section7" class="owl-slide d-flex align-items-center cover"
+<div id="section7" class="d-flex align-items-center cover"
     style="background-image: url(../../assets/Dahlia+FarisEngagementParty_1428.jpg);">
     <div class="table-container">
+        <h1>Total Guests Invited</h1>
+        <h2>1</h2>
+        <h1>Total Guests Invited</h1>
+        <h2>2</h2>
         <table class="table">
             <thead>
                 <tr class="table-primary">
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">No. of Guests</th>
                     <th scope="col">Attending</th>
+                    <th scope="col">No. of Guests</th>
+                    <th scope="col">Running Total</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +25,12 @@
                         <td>{{guest.Email}}</td>
                         <td>{{guest.isAttending}}</td>
                         <td>{{guest.Qty}}</td>
+                        <td></td>
+                        <td>
+                            <button type="button" (click)="deleteGuest(guest._id)">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </td>
                     </tr>
                 </ng-container>
             </tbody>

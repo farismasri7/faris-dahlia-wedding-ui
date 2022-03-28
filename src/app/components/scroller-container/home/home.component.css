@@ -3,20 +3,16 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-  
-.owl-slide {
-  position: relative;
-  height: 100vh;
-  background-color: lightgray;
-  -webkit-transform: translate3d(0,0,1px); 
-  -webkit-backface-visibility: hidden;
-}
 
 #section1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  position: relative;
+  position: static;
+  height: 100vh;
+  background-color: lightgray;
+  -webkit-transform: translate3d(0,0,1px); 
+  -webkit-backface-visibility: hidden;
 }
 
 #section1 h2 {
@@ -54,3 +50,20 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+  #section1 h2 {
+    /* white-space: nowrap; */
+    color: whitesmoke;
+    font-family: "Parisienne", serif;
+    font-size: 200%;
+    font-weight: bold;
+  }
+  
+  #section1 h1 {
+    /* white-space: nowrap; */
+    color: whitesmoke;
+    font-family: "Parisienne", serif;
+    font-size: 300%;
+    font-weight: bold;
+  }
+}

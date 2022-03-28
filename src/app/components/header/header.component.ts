@@ -16,9 +16,9 @@ export class HeaderComponent implements OnInit {
       let navBar:any = document.getElementById('headerNav');
       let navLinks:any = document.querySelectorAll('a');
       if(window.pageYOffset > 0){
-        navBar.className = "fixed-top navbar-scroll scrolled";
+        navBar.className = "navbar navbar-expand-lg fixed-top navbar-scroll scrolled";
       } else {
-        navBar.className = "fixed-top navbar-scroll";
+        navBar.className = "navbar navbar-expand-lg fixed-top navbar-scroll";
       }
     })
   }
@@ -27,15 +27,6 @@ export class HeaderComponent implements OnInit {
     this.authService.getAdmin().subscribe(profile => {
       this.admin = profile.user;
     })
-  }
-  
-  navCollapse() {
-    let x:any = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
   }
 
 }

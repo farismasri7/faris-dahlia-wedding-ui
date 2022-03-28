@@ -1,4 +1,4 @@
-<div class="fixed-top navbar-scroll" id="headerNav">
+<!-- <div class="navbar-fixed-top navbar-scroll" id="headerNav">
     <div class="topnav" id="myTopnav">
         <a href="home#section1" class="navbar-brand">F&D</a>
         <a href="home#section2" class="link section">RSVP</a>
@@ -11,4 +11,39 @@
             <i class="fa fa-bars"></i>
         </a>
     </div>
-</div>
+</div> -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-scroll" id="headerNav">
+    <a href="home#section1" class="navbar-brand">F&D</a>
+    <button class="navbar-toggler link icon" type="button" data-toggle="collapse" data-target="#myTopnav"
+        aria-controls="myTopnav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse topnav" id="myTopnav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item link section">
+                <a href="home#section2">RSVP</a>
+            </li>
+            <li class="nav-item link section">
+                <a href="home#section3">When & Where</a>
+            </li>
+            <li class="nav-item link section">
+                <a href="home#section4">Our Story</a>
+            </li>
+            <li class="nav-item link section">
+                <a href="home#section8">Accomodations</a>
+            </li>
+            <li class="nav-item link section">
+                <a href="home#section5">Registry</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item link section">
+                <a *ngIf="authService.loggedIn()" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item link section">
+                <a *ngIf="!authService.loggedIn()" routerLink="/guests">Guest List</a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -13,4 +13,8 @@ export class GuestsService {
   getGuests() {
     return this.http.get("http://localhost:3000/guests")
   }
+
+  deleteGuest(id: any) {
+    return this.http.delete(`http://localhost:3000/guests/${id}`)
+  }
 }

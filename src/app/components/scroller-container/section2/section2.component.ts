@@ -39,7 +39,6 @@ export class Section2Component implements OnInit {
     }
 
     this.rsvpService.registerGuestRsvp(guest).subscribe((data) => {
-      console.log("success");
       this.successBanner();
       event.preventDefault();
       let inputs: any = document.querySelectorAll('input, select');
@@ -51,25 +50,25 @@ export class Section2Component implements OnInit {
 
   successBanner() {
     let x: any = document.getElementById('success-banner');
-    x.className = 'alert alert-success';
+    x.style.display = "block";
     setTimeout(() => {
-      x.className = 'hidden alert alert-success';
+      x.style.display = "none";
     }, 3000);
   }
 
   errorBanner() {
     let y: any = document.getElementById('error-banner');
-    y.className = 'alert alert-danger';
+    y.style.display = "block";
     setTimeout(() => {
-      y.className = 'hidden alert alert-danger';
+      y.style.display = "none";
     }, 3000);
   }
 
   emailErrorBanner() {
     let y: any = document.getElementById('regex-error-banner');
-    y.className = 'alert alert-danger';
+    y.style.display = "block";
     setTimeout(() => {
-      y.className = 'hidden alert alert-danger';
+      y.style.display = "none";
     }, 3000);
   }
 }

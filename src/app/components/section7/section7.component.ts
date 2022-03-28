@@ -15,11 +15,15 @@ export class Section7Component implements OnInit {
     this.refreshGuestsList();
   }
 
-  refreshGuestsList(){
+  async refreshGuestsList(){
     this.guestsService.getGuests().subscribe((res) => {
       this.guestsService.guests = res as Guest[];
     })
   }
   
+  deleteGuest(id: any){
+    this.guestsService.deleteGuest(id).subscribe((res) => {
+    })
+  }
 
 }

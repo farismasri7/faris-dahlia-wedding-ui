@@ -4,10 +4,19 @@
     background-repeat: no-repeat;
 }
     
-.owl-slide {
+/* #section4 {
+    position: relative;
+    height: 100vh;
+    background-color: lightgray;
+    -webkit-transform: translate3d(0,0,1px); 
+    -webkit-backface-visibility: hidden;
+} */
+
+#carouselExampleIndicators {
     position: relative;
     height: 100vh;
     background-color: lightgray;
     -webkit-transform: translate3d(0,0,1px); 
     -webkit-backface-visibility: hidden;
 }
+

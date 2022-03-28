@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
 }
 
-.owl-slide {
+#section6 {
   position: relative;
   height: 100vh;
   background-color: lightgray;
@@ -17,10 +17,6 @@ form {
     padding: 10px;
     background-image: linear-gradient(to bottom right, rgba(6, 18, 75, 0.75), white);
     width: 70%;
-    /* position: absolute;
-    top: 60%;
-    right: 10%;
-    left: 10% */
 }
 
 @media screen and (max-width: 600px) {

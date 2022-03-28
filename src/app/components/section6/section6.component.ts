@@ -27,6 +27,7 @@ export class Section6Component implements OnInit {
 
     this.authService.authenticateAdmin(admin).subscribe(data => {
       this.authService.storeUserData(data.token, data.admin);
+      this.router.navigate(['guests']);
     })
   }
 

@@ -1,16 +1,15 @@
-.cover {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-}
-
-.owl-slide {
+#section2{
   position: relative;
   height: 100vh;
   background-color: lightgray;
   -webkit-transform: translate3d(0, 0, 1px);
   -webkit-backface-visibility: hidden;
+}
+.cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
 }
 
 form {
@@ -28,11 +27,10 @@ form {
   position: fixed;
   margin: auto;
   padding: 10px;
-  top: 33%;
+  top: 24%;
   right: 10%;
   left: 10%;
   width: 70%;
-  z-index: 9999;
   border-radius: 0px;
 }
 
@@ -47,7 +45,7 @@ form {
     );
     width: 70%;
     position: absolute;
-    top: 60%;
+    top: 50%;
     right: 10%;
     left: 10%;
   }
@@ -56,11 +54,11 @@ form {
     position: fixed;
     margin: auto;
     padding: 10px;
-    top: 56%;
+    font-size: 70%;
+    top: 45%;
     right: 10%;
     left: 10%;
     width: 70%;
-    z-index: 9999;
     border-radius: 0px;
   }
 }
