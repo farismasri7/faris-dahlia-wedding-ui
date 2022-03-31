@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class HeaderComponent implements OnInit {
   admin!: Object;
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) {
     window.addEventListener('scroll', (event) =>{
       let navBar:any = document.getElementById('headerNav');
@@ -27,6 +29,12 @@ export class HeaderComponent implements OnInit {
     this.authService.getAdmin().subscribe(profile => {
       this.admin = profile.user;
     })
+  }
+
+  onLogoutClick() {
+    this.authService.logout();
+    this.router.navigate(['/home']);
+    return false;
   }
 
 }

@@ -19,16 +19,42 @@ export class Section6Component implements OnInit {
   ngOnInit(): void {
   }
 
-  onLoginSubmit(){
+  onLoginSubmit(event:any){
     const admin = {
       Username: this.Username,
       Password: this.Password
     }
 
     this.authService.authenticateAdmin(admin).subscribe(data => {
-      this.authService.storeUserData(data.token, data.admin);
-      this.router.navigate(['guests']);
+      if(data.success){
+        this.successBanner();
+        event.preventDefault();
+        let inputs: any = document.querySelectorAll('input, select');
+        inputs.forEach((input: any) => {
+          input.value = '';
+        });
+        this.authService.storeUserData(data.token, data.admin);
+        this.router.navigate(['/guests']);
+      } else {
+        this.errorBanner();
+      }
     })
+  }
+
+  successBanner() {
+    let x: any = document.getElementById('success-banner');
+    x.style.display = "block";
+    setTimeout(() => {
+      x.style.display = "none";
+    }, 3000);
+  }
+
+  errorBanner() {
+    let y: any = document.getElementById('error-banner');
+    y.style.display = "block";
+    setTimeout(() => {
+      y.style.display = "none";
+    }, 3000);
   }
 
 }

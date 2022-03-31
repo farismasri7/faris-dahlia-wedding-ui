@@ -20,6 +20,7 @@ import { RsvpService } from './services/rsvp/rsvp.service';
 import { Section8Component } from './components/scroller-container/section8/section8.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AdminGuard } from './guards/admin.guard';
 
 
 
@@ -27,8 +28,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ScrollerContainerComponent },
-  { path: 'login', component: Section6Component},
-  { path: 'guests', component: Section7Component }
+  { path: 'login', component: Section6Component },
+  { path: 'guests', component: Section7Component, canActivate: [AdminGuard] }
 ]
 
 @NgModule({

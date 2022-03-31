@@ -19,6 +19,17 @@ form {
     width: 70%;
 }
 
+#success-banner, #error-banner {
+    position: fixed;
+    margin: auto;
+    padding: 10px;
+    top: 24%;
+    right: 10%;
+    left: 10%;
+    width: 70%;
+    border-radius: 0px;
+  }
+
 @media screen and (max-width: 600px) {
     form {
         margin: auto;
@@ -30,6 +41,18 @@ form {
         right: 10%;
         left: 10%
     }
+
+    #success-banner, #error-banner {
+        position: fixed;
+        margin: auto;
+        padding: 10px;
+        font-size: 70%;
+        top: 45%;
+        right: 10%;
+        left: 10%;
+        width: 70%;
+        border-radius: 0px;
+      }
 }
 button {
     display: block;

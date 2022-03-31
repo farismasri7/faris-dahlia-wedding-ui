@@ -1,6 +1,12 @@
 <div id="section6" class="d-flex align-items-center cover bio" 
     style ="background-image: url(../../assets/Dahlia+FarisEngagementParty_1428.jpg);">
-    <form (submit)="onLoginSubmit()">
+    <div id="success-banner" class="alert alert-success" style="display: none;" role="alert">
+        <strong>You are logged in!</strong>
+    </div>
+    <div id="error-banner" class="alert alert-danger" style="display: none;" role="alert">
+        <strong>Your username and password combination is incorrect</strong>
+    </div>
+    <form (submit)="onLoginSubmit($event)">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="Username">Username</label>

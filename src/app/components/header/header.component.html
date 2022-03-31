@@ -38,11 +38,14 @@
             </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
-            <li class="nav-item link section">
-                <a *ngIf="authService.loggedIn()" routerLink="/login">Login</a>
+            <li *ngIf="authService.loggedIn()" class="nav-item link section">
+                <a routerLink="/login">Login</a>
             </li>
-            <li class="nav-item link section">
-                <a *ngIf="!authService.loggedIn()" routerLink="/guests">Guest List</a>
+            <li *ngIf="!authService.loggedIn()" class="nav-item link section">
+                <a routerLink="/guests">Guest List</a>
+            </li>
+            <li *ngIf="!authService.loggedIn()" class="nav-item link section">
+                <a (click)="onLogoutClick()">Logout</a>
             </li>
         </ul>
     </div>
