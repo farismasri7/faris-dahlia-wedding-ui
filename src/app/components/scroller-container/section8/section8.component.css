@@ -1,0 +1,46 @@
+.cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+#section8 {
+  position: relative;
+  height: 100vh;
+  background-color: lightgray;
+  -webkit-transform: translate3d(0, 0, 1px);
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f005;
+}
+
+h1 {
+  position: absolute;
+  top: 10%;
+  color: black;
+  font-family: "Parisienne", serif;
+  font-size: 300%;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  position: absolute;
+  top: 16%;
+  color: black;
+  font-family: "Parisienne", serif;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+}

@@ -3,14 +3,6 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-    
-/* #section4 {
-    position: relative;
-    height: 100vh;
-    background-color: lightgray;
-    -webkit-transform: translate3d(0,0,1px); 
-    -webkit-backface-visibility: hidden;
-} */
 
 #carouselExampleIndicators {
     position: relative;
@@ -18,5 +10,10 @@
     background-color: lightgray;
     -webkit-transform: translate3d(0,0,1px); 
     -webkit-backface-visibility: hidden;
+}
+
+.carousel-item {
+    margin: auto;
+    top: 50%;
 }
 

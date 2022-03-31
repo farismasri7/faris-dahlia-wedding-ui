@@ -5,6 +5,23 @@
   -webkit-transform: translate3d(0, 0, 1px);
   -webkit-backface-visibility: hidden;
 }
+
+h1{
+  top: 10%;
+  color: black;
+  font-family: "Parisienne", serif;
+  font-size: 300%;
+  font-weight: bold;
+  text-align: center; 
+  position: fixed;
+  margin: auto;
+  padding: 10px;
+  right: 10%;
+  left: 10%;
+  width: 70%;
+  border-radius: 0px;
+}
+
 .cover {
   background-size: cover;
   background-position: center;
@@ -15,11 +32,7 @@
 form {
   margin: auto;
   padding: 10px;
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(6, 18, 75, 0.75),
-    white
-  );
+  background-color: aliceblue;
   width: 70%;
 }
 
@@ -38,16 +51,8 @@ form {
   form {
     margin: auto;
     padding: 10px;
-    background-image: linear-gradient(
-      to bottom right,
-      rgba(6, 18, 75, 0.75),
-      white
-    );
-    width: 70%;
+    width: 100%;
     position: absolute;
-    top: 50%;
-    right: 10%;
-    left: 10%;
   }
 
   #success-banner, #error-banner, #regex-error-banner {
@@ -62,14 +67,19 @@ form {
     border-radius: 0px;
   }
 }
+
 button {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-label {
-  color: white;
+
+select:invalid { 
+  color: gray; 
 }
+
+
 .form-group {
   margin: auto;
+  padding: 10px;
 }

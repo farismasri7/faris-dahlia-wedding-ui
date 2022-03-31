@@ -18,6 +18,10 @@ import { AuthService } from './services/auth/auth.service';
 import { GuestsService } from './services/guests/guests.service';
 import { RsvpService } from './services/rsvp/rsvp.service';
 import { Section8Component } from './components/scroller-container/section8/section8.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+
 
 
 const appRoutes: Routes = [
@@ -46,9 +50,13 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    PdfViewerModule
   ],
   providers: [AuthService, GuestsService, RsvpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
