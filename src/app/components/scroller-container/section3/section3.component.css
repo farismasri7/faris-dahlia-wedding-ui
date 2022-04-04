@@ -72,6 +72,14 @@
   align-self: center;
 }
 
+input {
+  /* background-color: rgba(6, 18, 75, 1); */
+  color: rgba(6, 18, 75, 1);
+  border-color: rgba(6, 18, 75, 1);
+  font-weight: bold;
+  font-family: "Parisienne", serif;
+}
+
 @media screen and (max-width: 600px) {
 
   .datetime {
