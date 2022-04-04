@@ -1,10 +1,26 @@
 <div id="section7" class="d-flex align-items-center cover"
     style="background-image: url(../../assets/Dahlia+FarisEngagementParty_1428.jpg);">
     <div class="table-container">
-        <h1>Total Guests Invited</h1>
-        <h2>1</h2>
-        <h1>Total Guests Invited</h1>
-        <h2>2</h2>
+        <table class="table">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">Total Guests Invited</th>
+                    <th scope="col">Total Guests RSVP "Yes"</th>
+                    <th scope="col">Total Guests RSVP "No"</th>
+                    <th scope="col">Total Guests RSVP "Maybe"</th>
+                    <th scope="col">Total # of Rooms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-primary">
+                    <td>{{invited}}</td>
+                    <td>{{attending}}</td>
+                    <td>{{notAttending}}</td>
+                    <td>{{maybeAttending}}</td>
+                    <td>{{rooms}}</td>
+                </tr>
+            </tbody>
+        </table>
         <table class="table">
             <thead>
                 <tr class="table-primary">
@@ -13,7 +29,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Attending</th>
                     <th scope="col">No. of Guests</th>
-                    <th scope="col">Running Total</th>
+                    <th scope="col">No. of rooms</th>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
@@ -25,7 +41,7 @@
                         <td>{{guest.Email}}</td>
                         <td>{{guest.isAttending}}</td>
                         <td>{{guest.Qty}}</td>
-                        <td></td>
+                        <td>{{guest.rooms}}</td>
                         <td>
                             <button type="button" (click)="deleteGuest(guest._id)">
                                 <span aria-hidden="true">&times;</span>

@@ -1,8 +1,8 @@
 <div id="section2" class="d-flex align-items-center cover"
-style="background-image: linear-gradient(to bottom right, rgba(6, 18, 75, 0.75), white);">
-<h1>Join us!</h1>
-<!-- <h2>RSVP Here!</h2>  -->
-<div id="success-banner" class="alert alert-success" style="display: none;" role="alert">
+    style="background-image: url(../../assets/Dahlia+FarisEngagementParty_0755.jpg);">
+    <h1 id="caption">Join us!</h1>
+    <h2>Rsvp below</h2> 
+    <div id="success-banner" class="alert alert-success" style="display: none;" role="alert">
         <strong>Your submission has been recorded</strong>
     </div>
     <div id="error-banner" class="alert alert-danger" style="display: none;" role="alert">
@@ -23,22 +23,16 @@ style="background-image: linear-gradient(to bottom right, rgba(6, 18, 75, 0.75),
             </div>
         </div>
         <div class="form-group">
-            <select [(ngModel)]="Qty" class="form-control" name="Qty" id="inputQty" ng-required="true">
-                <option selected disabled>Number of guests</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
+            <input type="Email" [(ngModel)]="Email" class="form-control" name="Email" id="inputEmail"
+                placeholder="Email" ng-required="true">
         </div>
         <div class="form-group">
-            <input type="Email" [(ngModel)]="Email" class="form-control" name="Email" id="inputEmail" placeholder="Email" ng-required="true">
+            <input [(ngModel)]="Qty" class="form-control" type="number" id="inputQty" name="Qty" min="1" max="10" 
+                placeholder="Number of Guests" ng-required="true">
+        </div>
+        <div class="form-group">
+            <input [(ngModel)]="rooms" class="form-control" type="number" id="inputrooms" name="rooms" min="0" max="10" 
+                placeholder="Number of Rooms @ Westin" ng-required="true">
         </div>
         <div class="form-group">
             <div class="row">
@@ -46,17 +40,17 @@ style="background-image: linear-gradient(to bottom right, rgba(6, 18, 75, 0.75),
                     <div class="form-check">
                         <input [(ngModel)]="isAttending" class="form-check-input" type="radio" name="gridRadios"
                             id="gridRadios1" value="Attending">
-                            Attending
+                        Attending
                     </div>
                     <div class="form-check">
                         <input [(ngModel)]="isAttending" class="form-check-input" type="radio" name="gridRadios"
                             id="gridRadios2" value="Not Attending">
-                            NOT Attending
+                        NOT Attending
                     </div>
                     <div class="form-check disabled">
                         <input [(ngModel)]="isAttending" class="form-check-input" type="radio" name="gridRadios"
                             id="gridRadios3" value="Maybe">
-                            Maybe
+                        Maybe
                     </div>
                 </div>
             </div>

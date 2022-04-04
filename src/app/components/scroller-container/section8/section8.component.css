@@ -44,3 +44,8 @@ p {
   font-weight: bold;
   text-align: center;
 }
+
+a {
+  background-color: rgba(6, 18, 75, 1);
+  font-family: "Parisienne", serif;
+}

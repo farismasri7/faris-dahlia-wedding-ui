@@ -13,6 +13,7 @@ export class Section2Component implements OnInit {
   LastName!: String;
   Email!: String;
   isAttending!: String;
+  rooms!: Number;
   Qty!: Number;
 
   constructor(private rsvpService: RsvpService) {}
@@ -25,9 +26,11 @@ export class Section2Component implements OnInit {
       LastName: this.LastName,
       Email: this.Email,
       isAttending: this.isAttending,
+      rooms: this.rooms,
       Qty: this.Qty,
     };
 
+    console.log(guest);
     if(!this.rsvpService.validateRSVP(guest)) {
       this.errorBanner();
       return;

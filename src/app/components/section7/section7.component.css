@@ -23,3 +23,13 @@ table{
   height: 80%;
   width: 80%;
 }
+
+h1{
+  font-size: 100%;
+  color: white;
+}
+
+h2{
+  font-size: 70%;
+  color: white;
+}

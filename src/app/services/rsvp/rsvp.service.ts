@@ -12,7 +12,7 @@ export class RsvpService {
 
   validateRSVP(guest: any) {
     console.log("validateRSVP");
-    if(guest.FirstName == undefined || guest.LastName == undefined || guest.Email == undefined || guest.isAttending == undefined || guest.Qty == undefined) {
+    if(guest.FirstName == undefined || guest.LastName == undefined || guest.Email == undefined || guest.isAttending == undefined || guest.Qty == undefined || guest.rooms == undefined) {
       return false;
     } else {
       return true;

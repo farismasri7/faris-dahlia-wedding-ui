@@ -4,5 +4,6 @@ export class Guest {
     LastName!: String;
     Email!: String;
     isAttending!: String;
+    rooms!: Number;
     Qty!: Number;
 }
