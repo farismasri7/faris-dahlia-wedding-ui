@@ -72,8 +72,10 @@ form {
   form {
     margin: auto;
     padding: 10px;
+    background-color: aliceblue;
     width: 100%;
-    position: absolute;
+    position: relative;
+    top: 23%;
   }
 
   #success-banner, #error-banner, #regex-error-banner {
