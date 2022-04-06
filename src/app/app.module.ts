@@ -26,8 +26,8 @@ import { AdminGuard } from './guards/admin.guard';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: ScrollerContainerComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: ScrollerContainerComponent },
   { path: 'login', component: Section6Component },
   { path: 'guests', component: Section7Component, canActivate: [AdminGuard] }
 ]

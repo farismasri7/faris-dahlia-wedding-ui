@@ -11,10 +11,10 @@ export class GuestsService {
   constructor(private http: HttpClient) { }
 
   getGuests() {
-    return this.http.get("http://localhost:3000/guests")
+    return this.http.get("https://farisanddahlia.com/api/guests")
   }
 
   deleteGuest(id: any) {
-    return this.http.delete(`http://localhost:3000/guests/${id}`)
+    return this.http.delete(`https://farisanddahlia.com/api/guests/${id}`)
   }
 }
