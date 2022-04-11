@@ -11,8 +11,8 @@ export class RsvpService {
   constructor(private http: HttpClient) { }
 
   validateRSVP(guest: any) {
-    console.log("validateRSVP");
-    if(guest.FirstName == undefined || guest.LastName == undefined || guest.Email == undefined || guest.isAttending == undefined || guest.Qty == undefined || guest.rooms == undefined) {
+    console.log("validateRSVP", guest);
+    if(guest.LastName == "" || guest.LastName == undefined || guest.FirstName == ""|| guest.FirstName == undefined || guest.LastName == undefined || guest.Email == undefined || guest.Email == "" || guest.isAttending == undefined  || guest.isAttending == ""|| guest.Qty == undefined || guest.Qty == -1 || guest.rooms == undefined|| guest.rooms == -1) {
       return false;
     } else {
       return true;
