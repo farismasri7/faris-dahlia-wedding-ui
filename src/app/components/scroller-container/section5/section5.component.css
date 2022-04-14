@@ -24,12 +24,12 @@ body {
   background-color: #f8f005;
 }
 
-p {
+h1 {
   position: absolute;
   top: 10%;
   color: white;
   font-family: "Parisienne", serif;
-  font-size: 200%;
+  font-size: 300%;
   font-weight: bold;
   text-align: center;
 }

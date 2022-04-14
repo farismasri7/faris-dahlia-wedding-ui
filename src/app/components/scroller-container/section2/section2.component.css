@@ -28,6 +28,7 @@ h1{
   width: 70%;
   border-radius: 0px;
   color: white;
+  flex-flow: row wrap;
 }
 
 h2{
@@ -45,6 +46,7 @@ h2{
   width: 70%;
   border-radius: 0px;
   color: white;
+  flex-flow: row wrap;
 }
 
 
@@ -54,7 +56,7 @@ form {
   background-color: aliceblue;
   width: 70%;
   position: relative;
-  top: 20%;
+  top: 15%;
 }
 
 #success-banner, #error-banner, #regex-error-banner {
@@ -75,7 +77,7 @@ form {
     background-color: aliceblue;
     width: 100%;
     position: relative;
-    top: 23%;
+    /* top: 23%; */
   }
 
   #success-banner, #error-banner, #regex-error-banner {

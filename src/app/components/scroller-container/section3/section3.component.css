@@ -16,7 +16,7 @@
 }
 
 .info {
-  height: 60%;
+  height: 40%;
   position: relative;
   top: 10%;
 }
@@ -29,7 +29,6 @@
   font-family: "Parisienne", serif;
   font-size: 300%;
   font-weight: bold;
-  margin: 20px;
 }
 
 .address1,
@@ -40,6 +39,7 @@
 .countdown {
   height: 80%;
   position: relative;
+  /* padding: 5px; */
 }
 
 .clockContainer {
@@ -64,7 +64,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 65%;
+  top: 60%;
 }
 
 #flowerNavy {
@@ -73,7 +73,6 @@
 }
 
 input {
-  /* background-color: rgba(6, 18, 75, 1); */
   color: rgba(6, 18, 75, 1);
   border-color: rgba(6, 18, 75, 1);
   font-weight: bold;
@@ -84,9 +83,8 @@ input {
 
   .datetime {
     font-family: "Parisienne", serif;
-    font-size: 200%;
+    font-size: 150%;
     font-weight: bold;
-    margin: 20px;
   }
   
   .address1,
@@ -123,7 +121,7 @@ input {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 80%;
+    top: 75%;
   }
   
   #flowerNavy {

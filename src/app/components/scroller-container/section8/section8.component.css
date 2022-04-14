@@ -45,16 +45,6 @@ p {
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  h1 {
-    color: black;
-  }
-  
-  p {
-    color: black;
-  }
-}
-
 
 a {
   background-color: rgba(6, 18, 75, 1);
