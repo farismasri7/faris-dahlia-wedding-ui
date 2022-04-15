@@ -11,7 +11,6 @@ export class RsvpService {
   constructor(private http: HttpClient) { }
 
   validateRSVP(guest: any) {
-    console.log("validateRSVP", guest);
     if(guest.LastName == "" || guest.LastName == undefined || guest.FirstName == ""|| guest.FirstName == undefined || guest.LastName == undefined || guest.Email == undefined || guest.Email == "" || guest.isAttending == undefined  || guest.isAttending == ""|| guest.Qty == undefined || guest.Qty == -1 || guest.rooms == undefined|| guest.rooms == -1) {
       return false;
     } else {
@@ -20,13 +19,11 @@ export class RsvpService {
   }
 
   validateEmailRegex(email: any) {
-    console.log("validateEmail");
     const regex = /^((([!#$%&'*+\-/=?^_`{|}~\w])|([!#$%&'*+\-/=?^_`{|}~\w][!#$%&'*+\-/=?^_`{|}~\.\w]{0,}[!#$%&'*+\-/=?^_`{|}~\w]))[@]\w+([-.]\w+)*\.\w+([-.]\w+)*)$/;
     return regex.test(email);
   }
 
   registerGuestRsvp(guest: any) {
-    console.log("registerGuest");
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application.json');
     return this.http.post('https://farisanddahlia.com/api/guests', guest, {headers: headers})

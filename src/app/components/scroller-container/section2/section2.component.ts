@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Guest } from 'src/app/models/guests.model';
 import { RsvpService } from 'src/app/services/rsvp/rsvp.service';
-// import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-section2',
@@ -9,62 +8,51 @@ import { RsvpService } from 'src/app/services/rsvp/rsvp.service';
   styleUrls: ['./section2.component.css'],
 })
 export class Section2Component implements OnInit {
-  FirstName!: string;
-  LastName!: string;
-  Email!: string;
-  isAttending!: string;
-  rooms!: number;
-  Qty!: number;
-  guest = {
-    FirstName: '',
-    LastName: '',
-    Email: '',
-    isAttending: '',
-    rooms: -1,
-    Qty: -1,
-  };
+  guest = Guest
+  FirstName!: String;
+  LastName!: String;
+  Email!: String;
+  isAttending!: String;
+  rooms!: Number;
+  Qty!: Number;
+
   constructor(private rsvpService: RsvpService) {}
 
   ngOnInit(): void {}
 
   onRSVPSubmit(event: any) {
-    this.guest.FirstName = this.FirstName;
-    this.guest.LastName = this.LastName;
-    this.guest.Email = this.Email;
-    this.guest.isAttending = this.isAttending;
-    this.guest.rooms = this.rooms;
-    this.guest.Qty = this.Qty;
+    event.preventDefault();
+    let guest: any = {
+      FirstName: this.FirstName,
+      LastName: this.LastName,
+      Email: this.Email,
+      isAttending: this.isAttending,
+      rooms: this.rooms,
+      Qty: this.Qty
+    }
 
-    console.log(this.guest);
-    if (!this.rsvpService.validateRSVP(this.guest)) {
-      console.log('Poopoo');
+    if (!this.rsvpService.validateRSVP(guest)) {
       this.errorBanner();
       return;
     }
 
-    if (!this.rsvpService.validateEmailRegex(this.guest.Email)) {
+    if (!this.rsvpService.validateEmailRegex(guest.Email)) {
       this.emailErrorBanner();
       return;
     }
 
-    this.rsvpService.registerGuestRsvp(this.guest).subscribe((data) => {});
-
-    console.log('SUCCESS', this.guest);
-    this.successBanner();
-    event.preventDefault();
-    this.guest.FirstName = '';
-    this.guest.LastName = '';
-    this.guest.Email = '';
-    this.guest.isAttending = '';
-    this.guest.rooms = -1;
-    this.guest.Qty = -1;
-    let inputs: any = document.querySelectorAll('input, select');
-    inputs.forEach((input: any) => {
-      input.value = '';
+    this.rsvpService.registerGuestRsvp(guest).subscribe((data) => {
     });
+    
+    this.successBanner(guest);
+
+    guest = undefined;
+    
+    let form: any = document.querySelector('form');
+    form.reset();
   }
 
-  successBanner() {
+  async successBanner(guest:any) {
     let x: any = document.getElementById('success-banner');
     x.style.display = 'block';
     setTimeout(() => {

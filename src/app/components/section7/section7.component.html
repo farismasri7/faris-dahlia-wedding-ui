@@ -1,5 +1,5 @@
 <div id="section7" class="d-flex align-items-center cover"
-    style="background-image: url(../../assets/DahliaFarisEngagementParty_1428.jpg);">
+    style="background-image: url(../../assets/DahliaFarisEngagementParty_0256.jpg);">
     <div class="table-container">
         <table class="table">
             <thead>
@@ -36,12 +36,12 @@
             <tbody>
                 <ng-container *ngFor="let guest of guestsService.guests">
                     <tr class="table-primary">
-                        <td>{{guest.FirstName}}</td>
-                        <td>{{guest.LastName}}</td>
-                        <td>{{guest.Email}}</td>
-                        <td>{{guest.isAttending}}</td>
-                        <td>{{guest.Qty}}</td>
-                        <td>{{guest.rooms}}</td>
+                        <td contenteditable>{{guest.FirstName}}</td>
+                        <td contenteditable>{{guest.LastName}}</td>
+                        <td contenteditable>{{guest.Email}}</td>
+                        <td contenteditable>{{guest.isAttending}}</td>
+                        <td contenteditable>{{guest.Qty}}</td>
+                        <td contenteditable>{{guest.rooms}}</td>
                         <td>
                             <button type="button" (click)="deleteGuest(guest._id)">
                                 <span aria-hidden="true">&times;</span>

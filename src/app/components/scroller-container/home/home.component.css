@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
 }
 
-#section1 {
+#home {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,7 +15,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-#section1 h2 {
+#home h2 {
   /* white-space: nowrap; */
   color: whitesmoke;
   font-family: "Parisienne", serif;
@@ -23,7 +23,7 @@
   font-weight: bold;
 }
 
-#section1 h1 {
+#home h1 {
   /* white-space: nowrap; */
   color: whitesmoke;
   font-family: "Parisienne", serif;
@@ -31,27 +31,27 @@
   font-weight: bold;
 }
 
-#section1 span {
+#home span {
   font-size: 100px; 
   color: whitesmoke;
   position: absolute;
   bottom: 25%;
 }
 
-#section1 span:hover {
+#home span:hover {
   font-size: 110px; 
   color: whitesmoke;
   position: absolute;
   bottom: 25%;
 }
 
-#section1 a {
+#home a {
   display: flex;
   justify-content: center;
 }
 
 @media screen and (max-width: 600px) {
-  #section1 h2 {
+  #home h2 {
     /* white-space: nowrap; */
     color: whitesmoke;
     font-family: "Parisienne", serif;
@@ -59,7 +59,7 @@
     font-weight: bold;
   }
   
-  #section1 h1 {
+  #home h1 {
     /* white-space: nowrap; */
     color: whitesmoke;
     font-family: "Parisienne", serif;
