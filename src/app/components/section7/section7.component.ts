@@ -20,6 +20,12 @@ export class Section7Component implements OnInit {
     this.tallyTracker();
   }
 
+  // ngOnChange(): void {
+  //   .getElementById("editor").addEventListener("input", function() {
+  //     console.log("input event fired");
+  // }, false);
+  // }
+
   async refreshGuestsList() {
     this.guestsService.getGuests().subscribe((res) => {
       this.guestsService.guests = res as Guest[];

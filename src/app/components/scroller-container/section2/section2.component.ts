@@ -8,7 +8,7 @@ import { RsvpService } from 'src/app/services/rsvp/rsvp.service';
   styleUrls: ['./section2.component.css'],
 })
 export class Section2Component implements OnInit {
-  guest = Guest
+  guest = Guest;
   FirstName!: String;
   LastName!: String;
   Email!: String;
@@ -28,8 +28,8 @@ export class Section2Component implements OnInit {
       Email: this.Email,
       isAttending: this.isAttending,
       rooms: this.rooms,
-      Qty: this.Qty
-    }
+      Qty: this.Qty,
+    };
 
     if (!this.rsvpService.validateRSVP(guest)) {
       this.errorBanner();
@@ -41,18 +41,17 @@ export class Section2Component implements OnInit {
       return;
     }
 
-    this.rsvpService.registerGuestRsvp(guest).subscribe((data) => {
-    });
-    
+    this.rsvpService.registerGuestRsvp(guest).subscribe((data) => {});
+
     this.successBanner(guest);
 
     guest = undefined;
-    
+
     let form: any = document.querySelector('form');
     form.reset();
   }
 
-  async successBanner(guest:any) {
+  async successBanner(guest: any) {
     let x: any = document.getElementById('success-banner');
     x.style.display = 'block';
     setTimeout(() => {
@@ -75,4 +74,19 @@ export class Section2Component implements OnInit {
       y.style.display = 'none';
     }, 3000);
   }
+
+  // openForm(action:string) {
+  //   let x: any = document.getElementById(`newRSVP`);
+  //   let y: any = document.getElementById(`editRSVP`);
+  //   switch(action){
+  //     case "new":
+  //       x.style.display = "block";
+  //       y.style.display = "none";
+  //       break;
+  //     case "edit":
+  //       y.style.display = "block";
+  //       x.style.display = "none";
+  //       break;
+  //   }
+  // }
 }

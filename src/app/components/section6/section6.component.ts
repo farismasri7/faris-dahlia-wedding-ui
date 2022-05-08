@@ -17,11 +17,12 @@ export class Section6Component implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   onLoginSubmit(event:any){
     const admin = {
-      Username: this.Username,
+      Username: this.Username.toLowerCase(),
       Password: this.Password
     }
 
