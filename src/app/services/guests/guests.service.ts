@@ -11,14 +11,14 @@ export class GuestsService {
   constructor(private http: HttpClient) { }
 
   getGuests() {
-    return this.http.get("https://farisanddahlia.com/guests")
+    return this.http.get("https://farisanddahlia.com/api/guests")
   }
 
   deleteGuest(id: any) {
-    return this.http.delete(`https://farisanddahlia.com/guests/${id}`)
+    return this.http.delete(`https://farisanddahlia.com/api/guests/${id}`)
   }
 
   editGuest(id: any, body: any) {
-    return this.http.put(`https://farisanddahlia.com/guests/${id}`, JSON.parse(body))
+    return this.http.put(`https://farisanddahlia.com/api/guests/${id}`, JSON.parse(body))
   }
 }
