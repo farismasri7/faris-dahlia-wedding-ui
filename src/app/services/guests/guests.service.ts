@@ -17,4 +17,8 @@ export class GuestsService {
   deleteGuest(id: any) {
     return this.http.delete(`http://localhost:3000/guests/${id}`)
   }
+
+  editGuest(id: any, body: any) {
+    return this.http.put(`http://localhost:3000/guests/${id}`, JSON.parse(body))
+  }
 }

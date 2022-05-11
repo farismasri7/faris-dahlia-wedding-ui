@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList } from '@angular/core';
+import { Component, Input, OnInit, QueryList, SimpleChange, SimpleChanges } from '@angular/core';
 import { Guest } from 'src/app/models/guests.model';
 import { GuestsService } from 'src/app/services/guests/guests.service';
 
@@ -20,12 +20,6 @@ export class Section7Component implements OnInit {
     this.tallyTracker();
   }
 
-  // ngOnChange(): void {
-  //   .getElementById("editor").addEventListener("input", function() {
-  //     console.log("input event fired");
-  // }, false);
-  // }
-
   async refreshGuestsList() {
     this.guestsService.getGuests().subscribe((res) => {
       this.guestsService.guests = res as Guest[];
@@ -33,12 +27,19 @@ export class Section7Component implements OnInit {
   }
 
   deleteGuest(id: any) {
-    this.guestsService.deleteGuest(id).subscribe((res) => {});
+    this.guestsService.deleteGuest(id).subscribe((res) => {
+      location.reload();
+    });
+  }
+
+  editGuest(editedGuest: any) {
+    this.guestsService.editGuest(editedGuest.id, JSON.stringify(editedGuest)).subscribe(res => {
+      console.log(res);
+    })
   }
 
   tallyTracker() {
     this.guestsService.getGuests().subscribe((res) => {
-      // this.guestsService.guests = res as Guest[];
       this.guestsService.guests.forEach((guest) => {
         this.rooms += guest.rooms;
         this.invited += guest.Qty;
@@ -52,7 +53,6 @@ export class Section7Component implements OnInit {
           this.maybeAttending += guest.Qty;
         }
       });
-      console.log(this.invited);
     });
   }
 }
