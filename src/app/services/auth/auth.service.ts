@@ -16,7 +16,7 @@ export class AuthService {
   authenticateAdmin(admin: any){
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/admin/authenticate', admin, {headers: headers})
+    return this.http.post('https://farisanddahlia.com/admin/authenticate', admin, {headers: headers})
       .pipe(map((res) => JSON.parse(JSON.stringify(res))));
   }
 
@@ -25,7 +25,7 @@ export class AuthService {
     this.loadToken();
     headers = headers.append('Authorization', this.authToken);
     headers = headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/admin/profile', {headers: headers})
+    return this.http.get('https://farisanddahlia.com/admin/profile', {headers: headers})
       .pipe(map((res) => JSON.parse(JSON.stringify(res))));
   }
 
