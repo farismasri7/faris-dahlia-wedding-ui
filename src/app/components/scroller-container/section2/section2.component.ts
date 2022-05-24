@@ -35,12 +35,10 @@ export class Section2Component implements OnInit {
       this.errorBanner();
       return;
     }
-
     if (!this.rsvpService.validateEmailRegex(guest.Email)) {
       this.emailErrorBanner();
       return;
     }
-
     this.rsvpService.registerGuestRsvp(guest).subscribe((data) => {});
 
     this.successBanner(guest);
@@ -75,18 +73,4 @@ export class Section2Component implements OnInit {
     }, 3000);
   }
 
-  // openForm(action:string) {
-  //   let x: any = document.getElementById(`newRSVP`);
-  //   let y: any = document.getElementById(`editRSVP`);
-  //   switch(action){
-  //     case "new":
-  //       x.style.display = "block";
-  //       y.style.display = "none";
-  //       break;
-  //     case "edit":
-  //       y.style.display = "block";
-  //       x.style.display = "none";
-  //       break;
-  //   }
-  // }
 }
