@@ -12,12 +12,12 @@ export class Section7Component implements OnInit {
   attending: any = 0;
   notAttending: any = 0;
   maybeAttending: any = 0;
-  // roomsCount: any = 0;
+  roomsCount: any = 0;
   FirstName!: any;
   LastName!: any;
   Email!: any;
   isAttending!: any;
-  rooms: any = 0;
+  rooms!: Number;
   Qty!: Number;
   constructor(public guestsService: GuestsService) {}
 
@@ -103,7 +103,7 @@ export class Section7Component implements OnInit {
   tallyTracker() {
     this.guestsService.getGuests().subscribe((res) => {
       this.guestsService.guests.forEach((guest) => {
-        this.rooms += guest.rooms;
+        this.roomsCount += guest.rooms;
         this.invited += guest.Qty;
         if (guest.isAttending == 'Attending') {
           this.attending += guest.Qty;
