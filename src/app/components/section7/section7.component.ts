@@ -25,8 +25,9 @@ export class Section7Component implements OnInit {
     this.refreshGuestsList();
     this.tallyTracker();
   }
-  
+
   openModal(event: any, id: any) {
+    event.preventDefault();
     var tr = event.currentTarget.parentNode.parentNode;
     let FirstName = tr.cells[0].textContent;
     let LastName = tr.cells[1].textContent;
@@ -62,9 +63,18 @@ export class Section7Component implements OnInit {
       maybeRadioForm.checked = true;
     }
 
+    console.log(event);
+    console.log(id);
+    console.log(FirstName, LastName, Email, Guests, rooms, Attending);
+
     document.getElementById('submitEdit')?.addEventListener('click', () => {
       this.editGuest(event, id)
     })
+
+    document.getElementById('closeEdit')?.addEventListener('click', () => {
+      location.reload();
+    })
+
   }
   
   async refreshGuestsList() {
@@ -90,9 +100,7 @@ export class Section7Component implements OnInit {
       Qty: this.Qty,
     };
 
-    this.guestsService.editGuest(id, JSON.stringify(editedGuest)).subscribe(res => {
-      this.refreshGuestsList();
-    })
+    this.guestsService.editGuest(id, JSON.stringify(editedGuest)).subscribe((data) => {})
 
     editedGuest = undefined;
 
